@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/image'
 
 import LogoImage from '@/assets/logosaas.png'
 import SocialX from '@/assets/social-x.svg'
@@ -6,6 +6,7 @@ import SocialInsta from '@/assets/social-insta.svg'
 import SocialLinkedIn from '@/assets/social-linkedin.svg'
 import SocialPin from '@/assets/social-pin.svg'
 import SocialYouTube from '@/assets/social-youtube.svg'
+
 
 export const Footer = () => {
     return (
@@ -16,24 +17,24 @@ export const Footer = () => {
                         src={LogoImage} 
                         alt="SaaS Logo" 
                         height={40} 
-                        className='relative' />
+                        className='relative hover:cursor-pointer' />
                 </div>
 
                 <nav className='flex flex-col md:flex-row md:justify-center gap-6 mt-6'>
-                    <a href="#">About</a>
-                    <a href="#">Features</a>
-                    <a href="#">Customers</a>
-                    <a href="#">Pricing</a>
-                    <a href="#">Help</a>
-                    <a href="#">Careers</a>
+                    <a className='hover:text-white' href="#">About</a>
+                    <a className='hover:text-white' href="#">Features</a>
+                    <a className='hover:text-white' href="#">Customers</a>
+                    <a className='hover:text-white' href="#">Pricing</a>
+                    <a className='hover:text-white' href="#">Help</a>
+                    <a className='hover:text-white' href="#">Careers</a>
                 </nav>
 
                 <div className='flex justify-center gap-6 mt-6'>
-                    <SocialX />
-                    <SocialInsta />
-                    <SocialLinkedIn />
-                    <SocialPin />
-                    <SocialYouTube />
+                    <SocialX className='hover:text-white' />
+                    <SocialInsta className='hover:text-white' />
+                    <SocialLinkedIn className='hover:text-white' />
+                    <SocialPin className='hover:text-white' />
+                    <SocialYouTube  className='hover:text-white' />
                 </div>
                 <p className='mt-6'>&copy; Your company, Inc. All rights are reserved.</p>
             </div>

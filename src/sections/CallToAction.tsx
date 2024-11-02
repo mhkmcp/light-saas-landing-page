@@ -1,29 +1,50 @@
+"use client"
+
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion'
+
 import ArrowRight  from '@/assets/arrow-right.svg'
 import StarImage from '@/assets/star.png'
 import SpringImage from '@/assets/spring.png'
-import Image from 'next/image';
 
 
 export const CallToAction = () => {
+    const sectionRef = useRef(null)
+
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ["start end", "end start"],
+    })
+    
+    const translateY = useTransform(scrollYProgress, [0, 1], [150, -150])
+    
     return (
-        <section className="bg-gradient-b from-white to-[#D2DCFF] py-24">
+        <section ref={sectionRef} className="bg-gradient-b from-white to-[#D2DCFF] py-24">
             <div className="container">
                 <div className="section-heading relative">
                     <h2 className="section-title">Sign up for free today</h2>
                     <p className="section-description mt-5">Celebrate the joy of accomplishment with an app 
                         designed to track your progress and motivate your efforts
                     </p>
-                    <Image 
-                        src={StarImage} 
+                    <motion.img 
+                        src={StarImage.src} 
                         alt='Star Image' 
                         width={360} 
-                        className='absolute -left-[350px] -top-[137px]' />
+                        className='absolute -left-[350px] -top-[137px]' 
+                        style={{
+                            translateY,
+                        }}
+                        />
                     
-                    <Image 
-                        src={SpringImage} 
+                    <motion.img 
+                        src={SpringImage.src} 
                         alt='Star Image' 
                         width={360} 
-                        className='absolute -right-[331px] -top-[19px]' />
+                        className='absolute -right-[331px] -top-[19px]' 
+                        style={{
+                            translateY,
+                        }}
+                        />
 
                 </div>
                 <div className="flex gap-2 mt-10 justify-center">
